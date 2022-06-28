@@ -34,9 +34,9 @@ export default function Header() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <ul>
-            <li><a href="#">teste</a></li>
-            <li><a href="#">teste</a></li>
-            <li><a href="#">teste</a></li>
+            <li><a href="#">testando</a></li>
+            <li><a href="#">testando</a></li>
+            <li><a href="#">testando</a></li>
           </ul>
         </Offcanvas.Body>
       </Offcanvas>
