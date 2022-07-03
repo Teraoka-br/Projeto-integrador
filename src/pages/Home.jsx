@@ -5,14 +5,15 @@ import Header from "../components/Header";
 import MenuCentral from "../components/MenuCentral";
 
 
+
 export default function Home () {
     return (
         <div>
         
            <Header/>
            <Calendar />
-          <MenuCentral />
-            
+        <MenuCentral />
+           
         </div>
     );
 }
