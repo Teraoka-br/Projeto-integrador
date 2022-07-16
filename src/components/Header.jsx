@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Alert, Button, Container, Nav, Navbar, Offcanvas, } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 
 export default function Header() {
@@ -44,7 +45,8 @@ export default function Header() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <ul>
-            <li><a href="#">testando</a></li>
+          <li><Link to="/">Home</Link></li>
+            <li><Link to="/clientes/cadastrar">Cadastrar Cliente</Link></li>
             <li><a href="#">testando</a></li>
             <li><a href="#">testando</a></li>
           </ul>
