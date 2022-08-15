@@ -1,11 +1,20 @@
 import { Button, Container, Form, Row, Col } from "react-bootstrap";
 
+
 export default function CadastrarCliente() {
+
+const consultacidade = [ 
+
+
+]
+
+
   return (
     <Container>
 
       <Form>
-        <Row className="mb-5">
+        <Row className="mb-3">
+         
           <Form.Group as={Col} controlId="Nome">
             <Form.Label>Nome</Form.Label>
             <Form.Control type="text" placeholder="Nome" />
@@ -16,23 +25,18 @@ export default function CadastrarCliente() {
             <Form.Control type="text" placeholder="000.000.000-00" />
           </Form.Group>
         </Row>
-
-        <Form.Group className="mb-5" controlId="CEP">
+        <Form.Group className="mb-3" controlId="CEP">
           <Form.Label>CEP</Form.Label>
           <Form.Control placeholder="00.000-000" />
         </Form.Group>
 
-        <Form.Group className="mb-5" controlId="RG">
+        <Form.Group className="mb-3" controlId="RG">
           <Form.Label>RG</Form.Label>
           <Form.Control placeholder="00.000.000-0" />
         </Form.Group>
 
-        <Row className="mb-5">
-          <Form.Group as={Col} controlId="cidade">
-            <Form.Label>Cidade</Form.Label>
-            <Form.Control />
-          </Form.Group>
-          <br></br>
+        <Row className="mb-3">
+          
           <Form.Group as={Col} controlId="estado">
             <Form.Label>Estado</Form.Label>
             <Form.Select defaultValue="Estado">
@@ -66,12 +70,18 @@ export default function CadastrarCliente() {
               <option value="EX">Estrangeiro</option>
             </Form.Select>
           </Form.Group>
-
+          <br></br>
+          <Form.Group as={Col} controlId="cidade">
+            <Form.Label>Cidade</Form.Label>
+            <Form.Control />
+          </Form.Group>
+          
 
 
           <br></br>
+          <br></br>
 
-          <Button variant="primary" type="submit">
+          <Button className="mt-5" variant="primary" type="submit">
             Salvar
           </Button>
         </Row>

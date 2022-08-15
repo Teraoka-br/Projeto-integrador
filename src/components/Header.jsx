@@ -10,7 +10,7 @@ export default function Header() {
   const handleShowMenu = () => setShowMenu(true);
   const handleCloseAlert = () => setShowAlert(false);
   const handleShowAlert = () => setShowAlert(true);
-  
+
   return (
 
     <header>
@@ -59,6 +59,7 @@ export default function Header() {
         </Offcanvas.Header>
         <Offcanvas.Body>
         <>
+        
   {[
     'primary',
     'secondary',
