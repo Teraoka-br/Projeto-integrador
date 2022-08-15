@@ -3,10 +3,6 @@ import { Button, Container, Form, Row, Col } from "react-bootstrap";
 
 export default function CadastrarCliente() {
 
-const consultacidade = [ 
-
-
-]
 
 
   return (
