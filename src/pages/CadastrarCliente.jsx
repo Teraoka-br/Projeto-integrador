@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
+import { Context } from "../context/ClienteContext";
 
 
 export default function CadastrarCliente() {
