@@ -1,87 +1,106 @@
-import { Button, Container, Form, Row, Col } from "react-bootstrap";
+import { useContext, useState } from "react";
+import { Button, Col, Form, Row } from "react-bootstrap";
 
 
 export default function CadastrarCliente() {
 
+  const { create } = useContext(Context);
 
+  const [nome, setNome] = useState();
+  const [CPF, setCpf] = useState();
+  const [RG, setRg] = useState();
+  const [pasta, setPasta] = useState();
+  const [profissao, setProfissao] = useState();
+  const [email, setEmail] = useState();
+  const [telefone, setTelefone] = useState();
+  const [rua, setRua] = useState();
+  const [cidade, setCidade] = useState();
+  const [cep, setCep] = useState();
+  const [numero, setNumero] = useState();
+
+  const submit = (event) => {
+    event.preventDefault();
+    create({
+      nome,
+      CPF,
+      RG,
+      pasta,
+      profissao,
+      email,
+      telefone,
+      rua,
+      cidade,
+      cep,
+      numero,
+    });
+  }
+  
 
   return (
-    <Container>
-
-      <Form>
-        <Row className="mb-3">
-         
-          <Form.Group as={Col} controlId="Nome">
+    <div className="ClienteForm">
+      <h3>Novo Cliente</h3>
+      <Form onSubmit={submit}>
+        <Row>
+          <Form.Group as={Col} className="mb-3">
             <Form.Label>Nome</Form.Label>
-            <Form.Control type="text" placeholder="Nome" />
+            <Form.Control placeholder="Nome" value={nome} onChange={(event) => setNome(event.target.value)} />
           </Form.Group>
-
-          <Form.Group as={Col} controlId="CPF">
-            <Form.Label>CPF</Form.Label>
-            <Form.Control type="text" placeholder="000.000.000-00" />
+          <Form.Group as={Col} className="mb-3">
+            <Form.Label>Sobrenome</Form.Label>
+            <Form.Control placeholder="Sobrenome" value={CPF} onChange={(event) => setCpf(event.target.value)} />
           </Form.Group>
         </Row>
-        <Form.Group className="mb-3" controlId="CEP">
-          <Form.Label>CEP</Form.Label>
-          <Form.Control placeholder="00.000-000" />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="RG">
-          <Form.Label>RG</Form.Label>
-          <Form.Control placeholder="00.000.000-0" />
-        </Form.Group>
-
-        <Row className="mb-3">
-          
-          <Form.Group as={Col} controlId="estado">
-            <Form.Label>Estado</Form.Label>
-            <Form.Select defaultValue="Estado">
-              <option value="AC">Acre</option>
-              <option value="AL">Alagoas</option>
-              <option value="AP">Amapá</option>
-              <option value="AM">Amazonas</option>
-              <option value="BA">Bahia</option>
-              <option value="CE">Ceará</option>
-              <option value="DF">Distrito Federal</option>
-              <option value="ES">Espírito Santo</option>
-              <option value="GO">Goiás</option>
-              <option value="MA">Maranhão</option>
-              <option value="MT">Mato Grosso</option>
-              <option value="MS">Mato Grosso do Sul</option>
-              <option value="MG">Minas Gerais</option>
-              <option value="PA">Pará</option>
-              <option value="PB">Paraíba</option>
-              <option value="PR">Paraná</option>
-              <option value="PE">Pernambuco</option>
-              <option value="PI">Piauí</option>
-              <option value="RJ">Rio de Janeiro</option>
-              <option value="RN">Rio Grande do Norte</option>
-              <option value="RS">Rio Grande do Sul</option>
-              <option value="RO">Rondônia</option>
-              <option value="RR">Roraima</option>
-              <option value="SC">Santa Catarina</option>
-              <option value="SP">São Paulo</option>
-              <option value="SE">Sergipe</option>
-              <option value="TO">Tocantins</option>
-              <option value="EX">Estrangeiro</option>
-            </Form.Select>
+        <h4>Dados de contato</h4>
+        <Row>
+          <Form.Group as={Col} className="mb-3">
+            <Form.Label>Telefone</Form.Label>
+            <Form.Control placeholder="Telefone" value={RG} onChange={(event) => setRg(event.target.value)} />
           </Form.Group>
-          <br></br>
-          <Form.Group as={Col} controlId="cidade">
+          <Form.Group as={Col} className="mb-3">
+            <Form.Label>Email</Form.Label>
+            <Form.Control type="email" placeholder="Email" value={pasta} onChange={(event) => setPasta(event.target.value)} />
+          </Form.Group>
+        </Row>
+
+        <h4>Dados de acesso</h4>
+        <Form.Group className="mb-3">
+          <Form.Label>Usuário</Form.Label>
+          <Form.Control placeholder="Usuário" value={profissao} onChange={(event) => setProfissao(event.target.value)}  />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Senha</Form.Label>
+          <Form.Control type="password" placeholder="Senha" value={email} onChange={(event) => setEmail(event.target.value)} />
+        </Form.Group>
+
+        <h4>Endereço</h4>
+        <Row>
+          <Form.Group as={Col} className="mb-3">
+            <Form.Label>Endereço</Form.Label>
+            <Form.Control placeholder="Endereço" value={telefone} onChange={(event) => setTelefone(event.target.value)} />
+          </Form.Group>
+          <Form.Group as={Col} md={3} className="mb-3">
+            <Form.Label>Número</Form.Label>
+            <Form.Control placeholder="Número" value={rua} onChange={(event) => setRua(event.target.value)}/>
+          </Form.Group>
+        </Row>
+        <Row>
+          <Form.Group as={Col} md={7} className="mb-3">
             <Form.Label>Cidade</Form.Label>
-            <Form.Control />
+            <Form.Control placeholder="Cidade" value={cidade} onChange={(event) => setCidade(event.target.value)}/>
           </Form.Group>
-          
-
-
-          <br></br>
-          <br></br>
-
-          <Button className="mt-5" variant="primary" type="submit">
-            Salvar
-          </Button>
+          <Form.Group as={Col} md={5} className="mb-3">
+            <Form.Label>CEP</Form.Label>
+            <Form.Control placeholder="CEP" value={cep} onChange={(event) => setCep(event.target.value)}/>
+          </Form.Group>
+          <Form.Group as={Col} md={5} className="mb-3">
+            <Form.Label>CEP</Form.Label>
+            <Form.Control placeholder="(014)00000-0000" value={numero} onChange={(event) => setNumero(event.target.value)}/>
+          </Form.Group>
         </Row>
+        <Button variant="primary" type="submit">
+          Cadastrar
+        </Button>
       </Form>
-    </Container>
+    </div>
   );
 }
