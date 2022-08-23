@@ -39,49 +39,53 @@ export default function CadastrarCliente() {
 
   return (
     <div className="ClienteForm">
-      <h3>Novo Cliente</h3>
+      
       <Form onSubmit={submit}>
+        <h4>Dados Pessoais</h4>
         <Row>
           <Form.Group as={Col} className="mb-3">
             <Form.Label>Nome</Form.Label>
             <Form.Control placeholder="Nome" value={nome} onChange={(event) => setNome(event.target.value)} />
           </Form.Group>
           <Form.Group as={Col} className="mb-3">
-            <Form.Label>Sobrenome</Form.Label>
-            <Form.Control placeholder="Sobrenome" value={CPF} onChange={(event) => setCpf(event.target.value)} />
+            <Form.Label>CPF</Form.Label>
+            <Form.Control  placeholder="000.000.000-00" value={CPF} onChange={(event) => setCpf(event.target.value)} />
           </Form.Group>
+          <Form.Group as={Col} className="mb-3">
+            <Form.Label>RG</Form.Label>
+            <Form.Control placeholder="00.000.000-0" value={RG} onChange={(event) => setRg(event.target.value)} />
+          </Form.Group>
+          <Form.Group as={Col} className="mb-3">
+            <Form.Label>Pasta</Form.Label>
+            <Form.Control  value={pasta} onChange={(event) => setPasta(event.target.value)} />
+          </Form.Group>
+          
         </Row>
-        <h4>Dados de contato</h4>
+        
         <Row>
+        <Form.Group as={Col} className="mb-3">
+            <Form.Label>Profissão</Form.Label>
+            <Form.Control value={profissao} onChange={(event) => setProfissao(event.target.value)} />
+          </Form.Group>
           <Form.Group as={Col} className="mb-3">
             <Form.Label>Telefone</Form.Label>
-            <Form.Control placeholder="Telefone" value={RG} onChange={(event) => setRg(event.target.value)} />
+            <Form.Control placeholder="(000)00000-0000" value={telefone} onChange={(event) => setTelefone(event.target.value)} />
           </Form.Group>
           <Form.Group as={Col} className="mb-3">
             <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Email" value={pasta} onChange={(event) => setPasta(event.target.value)} />
+            <Form.Control type="email" placeholder="email@email.com" value={email} onChange={(event) => setEmail(event.target.value)} />
           </Form.Group>
         </Row>
-
-        <h4>Dados de acesso</h4>
-        <Form.Group className="mb-3">
-          <Form.Label>Usuário</Form.Label>
-          <Form.Control placeholder="Usuário" value={profissao} onChange={(event) => setProfissao(event.target.value)}  />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Senha</Form.Label>
-          <Form.Control type="password" placeholder="Senha" value={email} onChange={(event) => setEmail(event.target.value)} />
-        </Form.Group>
 
         <h4>Endereço</h4>
         <Row>
           <Form.Group as={Col} className="mb-3">
-            <Form.Label>Endereço</Form.Label>
-            <Form.Control placeholder="Endereço" value={telefone} onChange={(event) => setTelefone(event.target.value)} />
+            <Form.Label>Rua</Form.Label>
+            <Form.Control  value={rua} onChange={(event) => setRua(event.target.value)} />
           </Form.Group>
           <Form.Group as={Col} md={3} className="mb-3">
             <Form.Label>Número</Form.Label>
-            <Form.Control placeholder="Número" value={rua} onChange={(event) => setRua(event.target.value)}/>
+            <Form.Control  value={numero} onChange={(event) => setNumero(event.target.value)}/>
           </Form.Group>
         </Row>
         <Row>
@@ -91,12 +95,9 @@ export default function CadastrarCliente() {
           </Form.Group>
           <Form.Group as={Col} md={5} className="mb-3">
             <Form.Label>CEP</Form.Label>
-            <Form.Control placeholder="CEP" value={cep} onChange={(event) => setCep(event.target.value)}/>
+            <Form.Control placeholder="00.000-000" value={cep} onChange={(event) => setCep(event.target.value)}/>
           </Form.Group>
-          <Form.Group as={Col} md={5} className="mb-3">
-            <Form.Label>CEP</Form.Label>
-            <Form.Control placeholder="(014)00000-0000" value={numero} onChange={(event) => setNumero(event.target.value)}/>
-          </Form.Group>
+          
         </Row>
         <Button variant="primary" type="submit">
           Cadastrar
