@@ -8,14 +8,14 @@ export default function MenuCentralItem({ icone, titulo, to }) {
             {to ?
                 (
                     <Button variant="primary" size="lg" as={Link} to={to} >
-                        <img src={icone} alt="" className="img-fluid" /> <br />
+                        <img src={icone} alt="" className="img-fluid" width={50} height={50} /> <br />
                         {titulo}
                     </Button>
                 )
                 :
                 (
                     <Button variant="primary" size="lg">
-                        <img src={icone} alt="" className="img-fluid" /> <br />
+                        <img src={icone} alt="" className="img-fluid" width={50}  height={50} /> <br />
                         {titulo}
                     </Button>
                 )

@@ -99,7 +99,7 @@ export default function CadastrarCliente() {
           </Form.Group>
           
         </Row>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" onClick={submit}>
           Cadastrar
         </Button>
       </Form>

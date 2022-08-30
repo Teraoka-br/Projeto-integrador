@@ -7,8 +7,8 @@ export default function ClienteContext({ children }) {
   const [todosclientes, SetTodosClientes] = useState([]);
   const [filter, setFilter] = useState("");
 
-  const create = (cliente) => {
-    fetch("http:localhost/2000/", {
+  const create = (client) => {
+    fetch("http://localhost/2000/", {
       method: "POST",
       body: JSON.stringify(cliente),
       mode: 'no-cors',
